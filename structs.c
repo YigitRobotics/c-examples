@@ -1,3 +1,13 @@
+/* 
+    This is basic example for structs in C language.
+    You can edit, copy and distribute this project for free.
+
+    For more information check out the "LICENSE" file.
+    
+    GitHub: @YigitRobotics
+*/
+
+
 #include <stdio.h>
 #include <string.h>
 
@@ -12,7 +22,7 @@ struct gameInfo g_gInfo;
 int main(void) {
     char playerName[20];
 
-    printf("Oyuncu adını giriniz: ");
+    printf("Please enter player name: ");
     scanf("%19s", playerName);
 
     if (strcmp(playerName, "yigit") == 0) {
@@ -26,7 +36,7 @@ int main(void) {
     strncpy(g_gInfo.playerName, playerName, sizeof(g_gInfo.playerName) - 1);
     g_gInfo.playerName[sizeof(g_gInfo.playerName) - 1] = '\0';
 
-    printf("Oyuncu adı: %s\n", g_gInfo.playerName);
+    printf("Player name: %s\n", g_gInfo.playerName);
     printf("Rank: %d\n", g_gInfo.rank);
 
     return 0;
