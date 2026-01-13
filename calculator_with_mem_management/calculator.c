@@ -23,9 +23,9 @@ void add() {
     }
 
     *result = g_values.num1 + g_values.num2;
-    printf(ANSI_COLOR_CYAN "memory address: \n");
+    printf(ANSI_COLOR_CYAN "memory address: ");
     printf(ANSI_COLOR_MAGENTA "%p", result);
-    printf(ANSI_COLOR_CYAN "%s", "\nvalue: \n");
+    printf(ANSI_COLOR_CYAN "%s", "\nvalue: ");
     printf(ANSI_COLOR_MAGENTA "%lld", *result);
     free(result);
     result = NULL; // The code is protected against use-after-free vulnerabilities.
@@ -43,9 +43,9 @@ void subtract() {
     }
 
     *result = g_values.num1 - g_values.num2;
-    printf(ANSI_COLOR_CYAN "memory address: \n");
+    printf(ANSI_COLOR_CYAN "memory address: ");
     printf(ANSI_COLOR_MAGENTA "%p", result);
-    printf(ANSI_COLOR_CYAN "%s", "\nvalue: \n");
+    printf(ANSI_COLOR_CYAN "%s", "\nvalue: ");
     printf(ANSI_COLOR_MAGENTA "%lld", *result);
     free(result);
     result = NULL; // The code is protected against use-after-free vulnerabilities.
@@ -63,9 +63,9 @@ void multiply() {
     }
 
     *result = g_values.num1 * g_values.num2;
-    printf(ANSI_COLOR_CYAN "memory address: \n");
+    printf(ANSI_COLOR_CYAN "memory address: ");
     printf(ANSI_COLOR_MAGENTA "%p", result);
-    printf(ANSI_COLOR_CYAN "%s", "\nvalue: \n");
+    printf(ANSI_COLOR_CYAN "%s", "\nvalue: ");
     printf(ANSI_COLOR_MAGENTA "%lld", *result);
     free(result);
     result = NULL; // The code is protected against use-after-free vulnerabilities.
@@ -74,18 +74,23 @@ void multiply() {
 void divide() {
     printf(ANSI_COLOR_BLUE "Enter 2 numbers: ");
     scanf("%lld %lld", &g_values.num1, &g_values.num2);
+
+    if (g_values.num2 == 0) {
+        printf(ANSI_COLOR_RED "Division by zero!");
+        return;
+    }
     
     long long *result = malloc(sizeof(long long));
 
     if (!result) {
         printf(ANSI_COLOR_RED "malloc error!");
-        exit(EXIT_FAILURE);
+        return;
     }
 
     *result = g_values.num1 / g_values.num2;
-    printf(ANSI_COLOR_CYAN "memory address: \n");
+    printf(ANSI_COLOR_CYAN "memory address: ");
     printf(ANSI_COLOR_MAGENTA "%p", result);
-    printf(ANSI_COLOR_CYAN "%s", "\nvalue: \n");
+    printf(ANSI_COLOR_CYAN "%s", "\nvalue ");
     printf(ANSI_COLOR_MAGENTA "%lld", *result);
     free(result);
     result = NULL; // The code is protected against use-after-free vulnerabilities.
