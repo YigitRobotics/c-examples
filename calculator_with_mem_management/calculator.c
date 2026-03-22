@@ -28,7 +28,7 @@ void add() {
     printf(ANSI_COLOR_CYAN "%s", "\nvalue: ");
     printf(ANSI_COLOR_MAGENTA "%lld", *result);
     free(result);
-    result = NULL; // The code is protected against use-after-free vulnerabilities.
+    result = NULL;
 }
 
 void subtract() {
@@ -48,7 +48,7 @@ void subtract() {
     printf(ANSI_COLOR_CYAN "%s", "\nvalue: ");
     printf(ANSI_COLOR_MAGENTA "%lld", *result);
     free(result);
-    result = NULL; // The code is protected against use-after-free vulnerabilities.
+    result = NULL;
 }
 
 void multiply() {
@@ -68,7 +68,7 @@ void multiply() {
     printf(ANSI_COLOR_CYAN "%s", "\nvalue: ");
     printf(ANSI_COLOR_MAGENTA "%lld", *result);
     free(result);
-    result = NULL; // The code is protected against use-after-free vulnerabilities.
+    result = NULL;
 }
 
 void divide() {
@@ -93,7 +93,7 @@ void divide() {
     printf(ANSI_COLOR_CYAN "%s", "\nvalue ");
     printf(ANSI_COLOR_MAGENTA "%lld", *result);
     free(result);
-    result = NULL; // The code is protected against use-after-free vulnerabilities.
+    result = NULL;
 }
 
 int main() {
