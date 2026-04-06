@@ -98,7 +98,7 @@ void divide() {
 
 int main() {
     int res_subtr;
-    int restop;
+    int resadd;
     int res_div;
     int res_mult;
 
@@ -106,7 +106,7 @@ int main() {
     scanf("%9s", g_values.operation);
 
     res_subtr = strcmp(g_values.operation, "subtract");
-    restop = strcmp(g_values.operation, "add");
+    resadd = strcmp(g_values.operation, "add");
     res_mult = strcmp(g_values.operation, "multiply");
     res_div = strcmp(g_values.operation, "divide");
 
@@ -116,7 +116,7 @@ int main() {
     if (res_div == 0) {
         divide();
     }
-    if (restop == 0) {
+    if (resadd == 0) {
         add();
     }
     if (res_mult == 0) {
